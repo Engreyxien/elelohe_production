@@ -89,7 +89,7 @@ const LeftoverIngredient = () => {
               onChange={(e) => setUserId(e.target.value)}
             >
               <Form.Label>User</Form.Label>
-              <Form.Control type="text" placeholder="Enter User ID" />
+              <Form.Control id="user" type="text" placeholder="Enter User ID" />
             </Form.Group>
             <Button variant="primary" type="submit">
               Submit
