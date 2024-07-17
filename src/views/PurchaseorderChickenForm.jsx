@@ -25,7 +25,7 @@ const PurchaseorderChickens = () => {
   async function handleCreatePurchaseorderChickens(e) {
     e.preventDefault();
     try {
-      const calculatedAmount = parseInt(unit_price) * parseInt(quantity);
+      const calculatedAmount = unit_price * quantity_unit;
       const body = {
         company_name,
         date_requested,
@@ -124,7 +124,7 @@ const PurchaseorderChickens = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              value={amount}
+              value={calculatedAmount}
               onChange={(e) => setAmount(e.target.value)}
             >
               <Form.Label>Amount</Form.Label>

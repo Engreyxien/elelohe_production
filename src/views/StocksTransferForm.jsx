@@ -28,7 +28,7 @@ const StocksTransfer = () => {
   async function handleCreateStocksTransfer(e) {
     e.preventDefault();
     try {
-      const calculatedAmount = parseInt(unit_price) * parseInt(quantity_unit);
+      const calculatedAmount = unit_price * quantity_unit;
       const body = {
         reference_number,
         transfer_from,
@@ -157,7 +157,7 @@ const StocksTransfer = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              value={amount}
+              value={calculatedAmount}
               onChange={(e) => setAmount(e.target.value)}
             >
               <Form.Label>Amount</Form.Label>

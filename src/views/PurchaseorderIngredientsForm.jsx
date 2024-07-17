@@ -25,7 +25,7 @@ const PurchaseorderIngredients = () => {
   async function handleCreatePurchaseorderIngredients(e) {
     e.preventDefault();
     try {
-      const calculatedAmount = parseInt(unit_price) * parseInt(quantity_unit);
+      const calculatedAmount = unit_price * quantity_unit;
       const body = {
         company_name,
         date_requested,
@@ -126,7 +126,7 @@ const PurchaseorderIngredients = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              value={amount}
+              value={calculatedAmount}
               onChange={(e) => setAmount(e.target.value)}
             >
               <Form.Label>Amount</Form.Label>
