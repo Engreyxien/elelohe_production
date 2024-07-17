@@ -48,10 +48,10 @@ const MaterialsPage = () => {
             </tr>
           </thead>
           <tbody>
-            {materials.map((material) => (
-              <tr key={material.id}>
-                <td>{material.materials_name}</td>
-                <td>{material.number_of_items}</td>
+            {materials.map((Materials) => (
+              <tr key={Materials.id}>
+                <td>{Materials.materials_name}</td>
+                <td>{Materials.number_of_items}</td>
               </tr>
             ))}
           </tbody>

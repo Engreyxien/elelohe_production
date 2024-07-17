@@ -9,7 +9,7 @@ const Home = () => {
     >
       <h1
         className="text-left"
-        style={{ color: "ff0080", fontStyle: "Sans-Serif" }}
+        style={{ color: "#ff0080", fontStyle: "Sans-Serif" }}
       >
         El Elohe Barbeque House
       </h1>
