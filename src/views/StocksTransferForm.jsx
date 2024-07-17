@@ -28,6 +28,7 @@ const StocksTransfer = () => {
   async function handleCreateStocksTransfer(e) {
     e.preventDefault();
     try {
+      const calculatedAmount = parseInt(unit_price) * parseInt(quantity_unit);
       const body = {
         reference_number,
         transfer_from,
@@ -39,7 +40,7 @@ const StocksTransfer = () => {
         quantity_unit,
         description,
         unit_price,
-        amount,
+        amount: calculatedAmount,
         user_id,
       };
       const { data } = await api.post("/stockstransfer", body);

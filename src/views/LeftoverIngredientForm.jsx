@@ -21,11 +21,12 @@ const LeftoverIngredient = () => {
   async function handleCreateLeftoverIngredient(e) {
     e.preventDefault();
     try {
+      const calculatedAmount = parseInt(unit_price) * parseInt(quantity);
       const body = {
         ingredient_name,
         quantity,
         unit_price,
-        amount,
+        amount: calculatedAmount,
         user_id,
       };
       const { data } = await api.post("/leftoveringredient", body);

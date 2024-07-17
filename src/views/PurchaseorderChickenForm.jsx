@@ -25,6 +25,7 @@ const PurchaseorderChickens = () => {
   async function handleCreatePurchaseorderChickens(e) {
     e.preventDefault();
     try {
+      const calculatedAmount = parseInt(unit_price) * parseInt(quantity);
       const body = {
         company_name,
         date_requested,
@@ -33,7 +34,7 @@ const PurchaseorderChickens = () => {
         quantity_unit,
         particulars,
         unit_price,
-        amount,
+        amount: calculatedAmount,
         user_id,
       };
       const { data } = await api.post("/purchaseorderchicken", body);
