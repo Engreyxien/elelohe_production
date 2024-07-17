@@ -4,8 +4,8 @@ import Register from "./views/Register";
 import Home from "./views/Home";
 import LeftoverIngredientForm from "./views/LeftoverIngredientForm";
 import LeftoverIngredientPage from "./views/LeftoverIngredientPage";
-import LeftoversForm from "./views/LeftoversForm";
-import LeftoversPage from "./views/LeftoversPage";
+import LeftOversPage from "./views/LeftOversPage";
+import LeftOversForm from "./views/LeftOversForm";
 import LeftoversProduceForm from "./views/LeftoversProduceForm";
 import LeftoversProducePage from "./views/LeftoversProducePage";
 import MaterialsForm from "./views/MaterialsForm";
@@ -56,12 +56,12 @@ const routes = [
   {
     name: "LeftoversForm",
     path: "/leftoversform",
-    element: <LeftoversForm />,
+    element: <LeftOversForm />,
   },
   {
     name: "LeftoversPage",
     path: "/leftoverspage",
-    element: <LeftoversPage />,
+    element: <LeftOversPage />,
   },
   {
     name: "LeftoversProduceForm",
