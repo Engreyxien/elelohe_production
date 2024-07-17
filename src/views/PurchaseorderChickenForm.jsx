@@ -25,7 +25,6 @@ const PurchaseorderChickens = () => {
   async function handleCreatePurchaseorderChickens(e) {
     e.preventDefault();
     try {
-      const calculatedAmount = unit_price * quantity_unit;
       const body = {
         company_name,
         date_requested,
@@ -34,7 +33,7 @@ const PurchaseorderChickens = () => {
         quantity_unit,
         particulars,
         unit_price,
-        amount: calculatedAmount,
+        amount,
         user_id,
       };
       const { data } = await api.post("/purchaseorderchicken", body);
@@ -115,12 +114,14 @@ const PurchaseorderChickens = () => {
               <Form.Label>Unit Price</Form.Label>
               <Form.Control type="text" placeholder="Enter Unit Price" />
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-              onChange={(e) => setAmount(calculatedAmount)}
-            >
+            <Form.Group className="mb-3">
               <Form.Label>Amount</Form.Label>
-              <Form.Control type="text" placeholder="Enter Amount" />
+              <Form.Control
+                type="text"
+                placeholder="Enter Amount"
+                value={unit_price * quantity_unit}
+                readOnly
+              />
             </Form.Group>
             <Form.Group
               className="mb-3"
