@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import useLocalStorage from "../hooks/useLocalStorage";
 
-const Leftovers = () => {
+const LeftOvers = () => {
   const token = localStorage.getItem("token");
   const setItem = useLocalStorage();
   const api = useApi(token);
@@ -21,7 +21,7 @@ const Leftovers = () => {
   const [delivered_by, setDeliveredBy] = useState("");
   const [user_id, setUserId] = useState("");
 
-  async function handleCreateLeftovers(e) {
+  async function handleCreateLeftOvers(e) {
     e.preventDefault();
     try {
       const body = {
@@ -56,7 +56,7 @@ const Leftovers = () => {
           <Card.Title>
             <h3 className="text-center">Create Leftover Turnover</h3>
           </Card.Title>
-          <Form onSubmit={handleCreateLeftovers}>
+          <Form onSubmit={handleCreateLeftOvers}>
             <Form.Group
               className="mb-3"
               value={branch}
@@ -131,4 +131,4 @@ const Leftovers = () => {
   );
 };
 
-export default Leftovers;
+export default LeftOvers;
