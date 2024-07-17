@@ -81,7 +81,7 @@ const LeftoverIngredient = () => {
               <Form.Control
                 type="text"
                 placeholder="Enter Amount"
-                value={amount}
+                value={(amount = unit_price * quantity)}
               />
             </Form.Group>
             <Form.Group
