@@ -21,12 +21,11 @@ const LeftoverIngredient = () => {
   async function handleCreateLeftoverIngredient(e) {
     e.preventDefault();
     try {
-      const calculatedAmount = unit_price * quantity;
       const body = {
         ingredient_name,
         quantity,
         unit_price,
-        amount: calculatedAmount,
+        amount,
         user_id,
       };
       const { data } = await api.post("/leftoveringredient", body);
@@ -75,7 +74,7 @@ const LeftoverIngredient = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              onChange={(e) => setAmount(calculatedAmount)}
+              onChange={(e) => setAmount(e.target.value)}
             >
               <Form.Label>Amount</Form.Label>
               <Form.Control type="text" placeholder="Enter Amount" />

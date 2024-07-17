@@ -126,7 +126,7 @@ const PurchaseorderIngredients = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              onChange={(e) => setAmount(calculatedAmount)}
+              onChange={(e) => setAmount(e.target.value)}
             >
               <Form.Label>Amount</Form.Label>
               <Form.Control type="text" placeholder="Enter Amount" />

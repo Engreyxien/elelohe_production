@@ -114,14 +114,12 @@ const PurchaseorderChickens = () => {
               <Form.Label>Unit Price</Form.Label>
               <Form.Control type="text" placeholder="Enter Unit Price" />
             </Form.Group>
-            <Form.Group className="mb-3">
+            <Form.Group
+              className="mb-3"
+              onChange={(e) => setAmount(e.target.value)}
+            >
               <Form.Label>Amount</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter Amount"
-                value={unit_price * quantity_unit}
-                readOnly
-              />
+              <Form.Control type="text" placeholder="Enter Amount" />
             </Form.Group>
             <Form.Group
               className="mb-3"
