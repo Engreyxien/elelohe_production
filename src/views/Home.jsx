@@ -9,7 +9,7 @@ const Home = () => {
     >
       <h1
         className="text-left"
-        style={{ color: "red", fontStyle: "Sans-Serif" }}
+        style={{ color: "ff0080", fontStyle: "Sans-Serif" }}
       >
         El Elohe Barbeque House
       </h1>
@@ -20,7 +20,7 @@ const Home = () => {
             <p
               style={{
                 textAlign: "justify",
-                color: "#ff0080",
+                color: "blue",
                 marginTop: "50px",
                 fontSize: "20px",
                 fontFamily: "Sans-Serif",
