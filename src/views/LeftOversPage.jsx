@@ -6,22 +6,22 @@ import { Link } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { Container } from "react-bootstrap";
 
-const LeftOversPage = () => {
+const LeftoversPage = () => {
   const { getItem } = useLocalStorage();
   const token = getItem("token");
   const api = useApi(token);
-  const [Leftovers, setLeftOvers] = useState([]);
+  const [Leftovers, setLeftovers] = useState([]);
   const [user, _] = useState(JSON.parse(getItem("user") || null));
 
   useEffect(() => {
-    getLeftOvers();
+    getLeftovers();
     return () => {};
   }, []);
 
-  async function getLeftOvers() {
+  async function getLeftovers() {
     try {
       const { data } = await api.get("/leftovers");
-      setLeftOvers(data);
+      setLeftovers(data);
     } catch (error) {
       console.error("Error fetching leftover turnovers:", error);
     }
@@ -70,4 +70,4 @@ const LeftOversPage = () => {
   );
 };
 
-export default LeftOversPage;
+export default LeftoversPage;
