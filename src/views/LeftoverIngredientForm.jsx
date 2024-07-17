@@ -21,7 +21,7 @@ const LeftoverIngredient = () => {
   async function handleCreateLeftoverIngredient(e) {
     e.preventDefault();
     try {
-      const calculatedAmount = unit_price * quantity_unit;
+      const calculatedAmount = unit_price * quantity;
       const body = {
         ingredient_name,
         quantity,
@@ -54,7 +54,6 @@ const LeftoverIngredient = () => {
           <Form onSubmit={handleCreateLeftoverIngredient}>
             <Form.Group
               className="mb-3"
-              value={ingredient_name}
               onChange={(e) => setIngredientName(e.target.value)}
             >
               <Form.Label>Ingredient Name</Form.Label>
@@ -62,7 +61,6 @@ const LeftoverIngredient = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              value={quantity}
               onChange={(e) => setQuantity(e.target.value)}
             >
               <Form.Label>Quantity</Form.Label>
@@ -70,7 +68,6 @@ const LeftoverIngredient = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              value={unit_price}
               onChange={(e) => setUnitPrice(e.target.value)}
             >
               <Form.Label>Unit Price</Form.Label>
@@ -78,11 +75,14 @@ const LeftoverIngredient = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              value={calculatedAmount}
               onChange={(e) => setAmount(e.target.value)}
             >
               <Form.Label>Amount</Form.Label>
-              <Form.Control type="text" placeholder="Enter Amount" />
+              <Form.Control
+                type="text"
+                placeholder="Enter Amount"
+                value={amount}
+              />
             </Form.Group>
             <Form.Group
               className="mb-3"
