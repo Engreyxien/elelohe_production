@@ -75,18 +75,13 @@ const LeftoverIngredient = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              onChange={(e) => setAmount(e.target.value)}
+              onChange={(e) => setAmount(calculatedAmount)}
             >
               <Form.Label>Amount</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter Amount"
-                value={(amount = unit_price * quantity)}
-              />
+              <Form.Control type="text" placeholder="Enter Amount" />
             </Form.Group>
             <Form.Group
               className="mb-3"
-              value={user_id}
               onChange={(e) => setUserId(e.target.value)}
             >
               <Form.Label>User</Form.Label>
