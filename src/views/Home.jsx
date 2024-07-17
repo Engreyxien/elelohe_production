@@ -20,7 +20,7 @@ const Home = () => {
             <p
               style={{
                 textAlign: "justify",
-                color: "#457b9d",
+                color: "#ff0080",
                 marginTop: "50px",
                 fontSize: "20px",
                 fontFamily: "Sans-Serif",
