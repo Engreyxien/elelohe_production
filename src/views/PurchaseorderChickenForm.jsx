@@ -62,7 +62,6 @@ const PurchaseorderChickens = () => {
           <Form onSubmit={handleCreatePurchaseorderChickens}>
             <Form.Group
               className="mb-3"
-              value={company_name}
               onChange={(e) => setCompanyName(e.target.value)}
             >
               <Form.Label>Company Name</Form.Label>
@@ -70,7 +69,6 @@ const PurchaseorderChickens = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              value={date_requested}
               onChange={(e) => setDateRequested(e.target.value)}
             >
               <Form.Label>Date Requested </Form.Label>
@@ -78,7 +76,6 @@ const PurchaseorderChickens = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              value={date_needed}
               onChange={(e) => setDateNeeded(e.target.value)}
             >
               <Form.Label>Date Needed</Form.Label>
@@ -86,7 +83,6 @@ const PurchaseorderChickens = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              value={number_of_items}
               onChange={(e) => setNumberOfItems(e.target.value)}
             >
               <Form.Label>Number of Items</Form.Label>
@@ -97,7 +93,6 @@ const PurchaseorderChickens = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              value={quantity_unit}
               onChange={(e) => setQuantityUnit(e.target.value)}
             >
               <Form.Label>Quantity</Form.Label>
@@ -105,7 +100,6 @@ const PurchaseorderChickens = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              value={particulars}
               onChange={(e) => setParticulars(e.target.value)}
             >
               <Form.Label>Particulars</Form.Label>
@@ -116,7 +110,6 @@ const PurchaseorderChickens = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              value={unit_price}
               onChange={(e) => setUnitPrice(e.target.value)}
             >
               <Form.Label>Unit Price</Form.Label>
@@ -124,15 +117,17 @@ const PurchaseorderChickens = () => {
             </Form.Group>
             <Form.Group
               className="mb-3"
-              value={calculatedAmount}
               onChange={(e) => setAmount(e.target.value)}
             >
               <Form.Label>Amount</Form.Label>
-              <Form.Control type="text" placeholder="Enter Amount" />
+              <Form.Control
+                type="text"
+                placeholder="Enter Amount"
+                value={(amount = unit_price * quantity_unit)}
+              />
             </Form.Group>
             <Form.Group
               className="mb-3"
-              value={user_id}
               onChange={(e) => setUserId(e.target.value)}
             >
               <Form.Label>User</Form.Label>
