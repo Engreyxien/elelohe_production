@@ -35,7 +35,7 @@ const LeftOvers = () => {
         delivered_by,
         user_id,
       };
-      const { data } = await api.post("/leftover", body);
+      const { data } = await api.post("/leftovers", body);
       toast.success(data.message);
       navigate("/leftoverspage");
     } catch (error) {
