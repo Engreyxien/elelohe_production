@@ -30,7 +30,7 @@ const LeftOvers = () => {
         date,
         time,
         item_number,
-        item,
+        items,
         quantity,
         delivered_by,
         user_id,
