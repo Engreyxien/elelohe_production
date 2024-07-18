@@ -30,7 +30,7 @@ const LeftoversTurnover = () => {
         date,
         time,
         item_number,
-        items,
+        number_of_items,
         quantity,
         delivered_by,
         user_id,
