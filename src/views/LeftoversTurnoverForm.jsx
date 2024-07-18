@@ -7,9 +7,9 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import useLocalStorage from "../hooks/useLocalStorage";
 
-const LeftOvers = () => {
+const LeftoversTurnover = () => {
+  const token = localStorage.getItem("token");
   const setItem = useLocalStorage();
-  const token = getItem("token");
   const api = useApi(token);
   const navigate = useNavigate();
 
@@ -22,7 +22,7 @@ const LeftOvers = () => {
   const [delivered_by, setDeliveredBy] = useState("");
   const [user_id, setUserId] = useState("");
 
-  async function handleCreateLeftOver(e) {
+  async function handleCreateLeftoversTurnover(e) {
     e.preventDefault();
     try {
       const body = {
@@ -35,9 +35,9 @@ const LeftOvers = () => {
         delivered_by,
         user_id,
       };
-      const { data } = await api.post("/leftovers", body);
+      const { data } = await api.post("/leftoversturnover", body);
       toast.success(data.message);
-      navigate("/leftoverspage");
+      navigate("/leftoversturnoverpage");
     } catch (error) {
       if (error.response && error.response.data) {
         toast.error(error.response.data.message);
@@ -57,7 +57,7 @@ const LeftOvers = () => {
           <Card.Title>
             <h3 className="text-center">Create Leftover Turnover</h3>
           </Card.Title>
-          <Form onSubmit={handleCreateLeftOver}>
+          <Form onSubmit={handleCreateLeftoversTurnover}>
             <Form.Group className="mb-3">
               <Form.Label>Branch</Form.Label>
               <Form.Control
@@ -140,4 +140,4 @@ const LeftOvers = () => {
   );
 };
 
-export default LeftOvers;
+export default LeftoversTurnover;

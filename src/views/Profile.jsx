@@ -73,7 +73,7 @@ function Profile() {
           id="bg-vertical-dropdown-3"
           variant="outline-danger"
         >
-          <Dropdown.Item eventKey="1" as={Link} to="/leftoverspage">
+          <Dropdown.Item eventKey="1" as={Link} to="/leftoversturnoverpage">
             {" "}
             Leftovers Turnover
           </Dropdown.Item>

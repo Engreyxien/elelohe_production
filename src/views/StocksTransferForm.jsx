@@ -28,7 +28,6 @@ const StocksTransfer = () => {
   async function handleCreateStocksTransfer(e) {
     e.preventDefault();
     try {
-      const calculatedAmount = unit_price * quantity_unit;
       const body = {
         reference_number,
         transfer_from,
@@ -40,7 +39,7 @@ const StocksTransfer = () => {
         quantity_unit,
         description,
         unit_price,
-        amount: calculatedAmount,
+        amount,
         user_id,
       };
       const { data } = await api.post("/stockstransfer", body);

@@ -6,22 +6,22 @@ import { Link } from "react-router-dom";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { Container } from "react-bootstrap";
 
-const LeftOversPage = () => {
+const LeftoversTurnoverPage = () => {
   const { getItem } = useLocalStorage();
   const token = getItem("token");
   const api = useApi(token);
-  const [LeftOvers, setLeftOvers] = useState([]);
+  const [LeftoversTurnovers, setLeftoversTurnovers] = useState([]);
   const [user, _] = useState(JSON.parse(getItem("user") || null));
 
   useEffect(() => {
-    getLeftOvers();
+    getLeftoversTurnovers();
     return () => {};
   }, []);
 
-  async function getLeftOvers() {
+  async function getLeftoversTurnovers() {
     try {
-      const { data } = await api.get("/leftovers");
-      setLeftOvers(data);
+      const { data } = await api.get("/leftoversturnovers");
+      setLeftoversTurnovers(data);
     } catch (error) {
       console.error("Error fetching leftover turnovers:", error);
     }
@@ -33,7 +33,7 @@ const LeftOversPage = () => {
         <Button
           variant="success justify-content-center"
           as={Link}
-          to="/leftoversform"
+          to="/leftoversturnoverform"
           className="mb-3 mt-3"
         >
           Add Leftovers Turnover
@@ -52,15 +52,15 @@ const LeftOversPage = () => {
             </tr>
           </thead>
           <tbody>
-            {LeftOvers.map((leftovers) => (
-              <tr key={leftovers.id}>
-                <td>{leftovers.branch}</td>
-                <td>{leftovers.date}</td>
-                <td>{leftovers.time}</td>
-                <td>{leftovers.item_number}</td>
-                <td>{leftovers.items}</td>
-                <td>{leftovers.quantity}</td>
-                <td>{leftovers.delivered_by}</td>
+            {LeftoversTurnovers.map((leftoversturnovers) => (
+              <tr key={leftoversturnovers.id}>
+                <td>{leftoversturnovers.branch}</td>
+                <td>{leftoversturnovers.date}</td>
+                <td>{leftoversturnovers.time}</td>
+                <td>{leftoversturnovers.item_number}</td>
+                <td>{leftoversturnovers.items}</td>
+                <td>{leftoversturnovers.quantity}</td>
+                <td>{leftoversturnovers.delivered_by}</td>
               </tr>
             ))}
           </tbody>
@@ -70,4 +70,4 @@ const LeftOversPage = () => {
   );
 };
 
-export default LeftOversPage;
+export default LeftoversTurnoverPage;
