@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import useLocalStorage from "../hooks/useLocalStorage";
 
 const LeftOvers = () => {
-  const { getItem } = useLocalStorage();
+  const setItem = useLocalStorage();
   const token = getItem("token");
   const api = useApi(token);
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const LeftOvers = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [item_number, setItemNumber] = useState("");
-  const [item, setItem] = useState("");
+  const [items, setItems] = useState("");
   const [quantity, setQuantity] = useState("");
   const [delivered_by, setDeliveredBy] = useState("");
   const [user_id, setUserId] = useState("");
@@ -95,12 +95,12 @@ const LeftOvers = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>Item</Form.Label>
+              <Form.Label>Items</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter Item"
-                value={item}
-                onChange={(e) => setItem(e.target.value)}
+                value={items}
+                onChange={(e) => setItems(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="mb-3">

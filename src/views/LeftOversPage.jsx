@@ -46,7 +46,7 @@ const LeftOversPage = () => {
               <th>Date</th>
               <th>Time</th>
               <th>Item Number</th>
-              <th>Item</th>
+              <th>Items</th>
               <th>Quantity</th>
               <th>Delivered By</th>
             </tr>
@@ -58,7 +58,7 @@ const LeftOversPage = () => {
                 <td>{leftovers.date}</td>
                 <td>{leftovers.time}</td>
                 <td>{leftovers.item_number}</td>
-                <td>{leftovers.item}</td>
+                <td>{leftovers.items}</td>
                 <td>{leftovers.quantity}</td>
                 <td>{leftovers.delivered_by}</td>
               </tr>
