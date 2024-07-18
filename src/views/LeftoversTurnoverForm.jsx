@@ -17,7 +17,7 @@ const LeftoversTurnover = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [item_number, setItemNumber] = useState("");
-  const [items, setItems] = useState("");
+  const [number_of_items, setNumberOfItems] = useState("");
   const [quantity, setQuantity] = useState("");
   const [delivered_by, setDeliveredBy] = useState("");
   const [user_id, setUserId] = useState("");
@@ -99,8 +99,8 @@ const LeftoversTurnover = () => {
               <Form.Control
                 type="text"
                 placeholder="Enter Item"
-                value={items}
-                onChange={(e) => setItems(e.target.value)}
+                value={number_of_items}
+                onChange={(e) => setNumberOfItems(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="mb-3">

@@ -46,7 +46,7 @@ const LeftoversTurnoverPage = () => {
               <th>Date</th>
               <th>Time</th>
               <th>Item Number</th>
-              <th>Items</th>
+              <th>Number of Item</th>
               <th>Quantity</th>
               <th>Delivered By</th>
             </tr>
@@ -58,7 +58,7 @@ const LeftoversTurnoverPage = () => {
                 <td>{leftoversturnovers.date}</td>
                 <td>{leftoversturnovers.time}</td>
                 <td>{leftoversturnovers.item_number}</td>
-                <td>{leftoversturnovers.items}</td>
+                <td>{leftoversturnovers.number_of_items}</td>
                 <td>{leftoversturnovers.quantity}</td>
                 <td>{leftoversturnovers.delivered_by}</td>
               </tr>
