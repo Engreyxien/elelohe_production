@@ -8,20 +8,21 @@ import { ToastContainer, toast } from "react-toastify";
 import useLocalStorage from "../hooks/useLocalStorage";
 
 const LeftOvers = () => {
-  const token = localStorage.getItem("token");
-  const setItem = useLocalStorage();
+  const { getItem } = useLocalStorage();
+  const token = getItem("token");
   const api = useApi(token);
   const navigate = useNavigate();
+
   const [branch, setBranch] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [item_number, setItemNumber] = useState("");
-  const [item, setItems] = useState("");
+  const [item, setItem] = useState("");
   const [quantity, setQuantity] = useState("");
   const [delivered_by, setDeliveredBy] = useState("");
   const [user_id, setUserId] = useState("");
 
-  async function handleCreateLeftOvers(e) {
+  async function handleCreateLeftOver(e) {
     e.preventDefault();
     try {
       const body = {
@@ -37,9 +38,9 @@ const LeftOvers = () => {
       const { data } = await api.post("/leftover", body);
       toast.success(data.message);
       navigate("/leftoverspage");
-    } catch (e) {
-      if (e.response && e.response.data) {
-        toast.error(e.response.data.message);
+    } catch (error) {
+      if (error.response && error.response.data) {
+        toast.error(error.response.data.message);
       } else {
         toast.error("An error occurred");
       }
@@ -56,70 +57,78 @@ const LeftOvers = () => {
           <Card.Title>
             <h3 className="text-center">Create Leftover Turnover</h3>
           </Card.Title>
-          <Form onSubmit={handleCreateLeftOvers}>
-            <Form.Group
-              className="mb-3"
-              value={branch}
-              onChange={(e) => setBranch(e.target.value)}
-            >
+          <Form onSubmit={handleCreateLeftOver}>
+            <Form.Group className="mb-3">
               <Form.Label>Branch</Form.Label>
-              <Form.Control type="text" placeholder="Enter Branch" />
+              <Form.Control
+                type="text"
+                placeholder="Enter Branch"
+                value={branch}
+                onChange={(e) => setBranch(e.target.value)}
+              />
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            >
+            <Form.Group className="mb-3">
               <Form.Label>Date</Form.Label>
-              <Form.Control type="date" placeholder="Enter Date" />
+              <Form.Control
+                type="date"
+                placeholder="Enter Date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
-            >
+            <Form.Group className="mb-3">
               <Form.Label>Time</Form.Label>
-              <Form.Control type="time" placeholder="Enter Time" />
+              <Form.Control
+                type="time"
+                placeholder="Enter Time"
+                value={time}
+                onChange={(e) => setTime(e.target.value)}
+              />
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-              value={item_number}
-              onChange={(e) => setItemNumber(e.target.value)}
-            >
+            <Form.Group className="mb-3">
               <Form.Label>Item Number</Form.Label>
-              <Form.Control type="text" placeholder="Enter Item Number" />
+              <Form.Control
+                type="text"
+                placeholder="Enter Item Number"
+                value={item_number}
+                onChange={(e) => setItemNumber(e.target.value)}
+              />
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-              value={item}
-              onChange={(e) => setItems(e.target.value)}
-            >
+            <Form.Group className="mb-3">
               <Form.Label>Item</Form.Label>
-              <Form.Control type="text" placeholder="Enter Item" />
+              <Form.Control
+                type="text"
+                placeholder="Enter Item"
+                value={item}
+                onChange={(e) => setItem(e.target.value)}
+              />
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-              value={quantity}
-              onChange={(e) => setQuantity(e.target.value)}
-            >
+            <Form.Group className="mb-3">
               <Form.Label>Quantity</Form.Label>
-              <Form.Control type="text" placeholder="Enter Quantity" />
+              <Form.Control
+                type="text"
+                placeholder="Enter Quantity"
+                value={quantity}
+                onChange={(e) => setQuantity(e.target.value)}
+              />
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-              value={delivered_by}
-              onChange={(e) => setDeliveredBy(e.target.value)}
-            >
+            <Form.Group className="mb-3">
               <Form.Label>Delivered By</Form.Label>
-              <Form.Control type="text" placeholder="Enter Delivered By" />
+              <Form.Control
+                type="text"
+                placeholder="Enter Delivered By"
+                value={delivered_by}
+                onChange={(e) => setDeliveredBy(e.target.value)}
+              />
             </Form.Group>
-            <Form.Group
-              className="mb-3"
-              value={user_id}
-              onChange={(e) => setUserId(e.target.value)}
-            >
-              <Form.Label>User</Form.Label>
-              <Form.Control type="text" placeholder="Enter User ID" />
+            <Form.Group className="mb-3">
+              <Form.Label>User ID</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter User ID"
+                value={user_id}
+                onChange={(e) => setUserId(e.target.value)}
+              />
             </Form.Group>
             <Button variant="primary" type="submit">
               Submit
