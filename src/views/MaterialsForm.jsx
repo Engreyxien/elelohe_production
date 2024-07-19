@@ -14,7 +14,6 @@ const Materials = () => {
   const navigate = useNavigate();
   const [materials_name, setMaterialsName] = useState("");
   const [number_of_items, setNumberofItems] = useState("");
-  const [user_id, setUserId] = useState("");
 
   async function handleCreateMaterials(e) {
     e.preventDefault();
@@ -22,7 +21,6 @@ const Materials = () => {
       const body = {
         materials_name,
         number_of_items,
-        user_id,
       };
       const { data } = await api.post("/material", body);
       toast.success(data.message);
@@ -59,14 +57,6 @@ const Materials = () => {
             >
               <Form.Label>Number of Items</Form.Label>
               <Form.Control type="text" placeholder="Enter Number of Items" />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              value={user_id}
-              onChange={(e) => setUserId(e.target.value)}
-            >
-              <Form.Label>User</Form.Label>
-              <Form.Control type="text" placeholder="Enter User" />
             </Form.Group>
             <Button variant="primary" type="submit">
               Submit

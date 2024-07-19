@@ -17,7 +17,6 @@ const StocksIngredients = () => {
   const [dispatch_AM, setDispatchAM] = useState("");
   const [dispatch_PM, setDispatchPM] = useState("");
   const [ending_stocks, setEndingStocks] = useState("");
-  const [user_id, setUserId] = useState("");
 
   async function handleCreateStocksIngredients(e) {
     e.preventDefault();
@@ -28,7 +27,6 @@ const StocksIngredients = () => {
         dispatch_AM,
         dispatch_PM,
         ending_stocks,
-        user_id,
       };
       const { data } = await api.post("/stocksingredient", body);
       toast.success(data.message);
@@ -92,14 +90,6 @@ const StocksIngredients = () => {
             >
               <Form.Label>Ending Stocks</Form.Label>
               <Form.Control type="text" placeholder="Enter Ending Stocks" />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              value={user_id}
-              onChange={(e) => setUserId(e.target.value)}
-            >
-              <Form.Label>User</Form.Label>
-              <Form.Control type="text" placeholder="Enter User ID" />
             </Form.Group>
             <Button variant="primary" type="submit">
               Submit

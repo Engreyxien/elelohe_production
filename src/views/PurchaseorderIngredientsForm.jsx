@@ -20,7 +20,6 @@ const PurchaseorderIngredients = () => {
   const [particulars, setParticulars] = useState("");
   const [unit_price, setUnitPrice] = useState("");
   const [amount, setAmount] = useState("");
-  const [user_id, setUserId] = useState("");
 
   async function handleCreatePurchaseorderIngredients(e) {
     e.preventDefault();
@@ -34,7 +33,6 @@ const PurchaseorderIngredients = () => {
         particulars,
         unit_price,
         amount,
-        user_id,
       };
       const { data } = await api.post("/purchaseorderingredient", body);
       toast.success(data.message);
@@ -129,14 +127,6 @@ const PurchaseorderIngredients = () => {
             >
               <Form.Label>Amount</Form.Label>
               <Form.Control type="text" placeholder="Enter Amount" />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              value={user_id}
-              onChange={(e) => setUserId(e.target.value)}
-            >
-              <Form.Label>User</Form.Label>
-              <Form.Control type="text" placeholder="Enter User ID" />
             </Form.Group>
             <Button variant="primary" type="submit">
               Submit

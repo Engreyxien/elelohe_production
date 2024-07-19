@@ -20,7 +20,6 @@ const LeftoversTurnover = () => {
   const [number_of_items, setNumberOfItems] = useState("");
   const [quantity, setQuantity] = useState("");
   const [delivered_by, setDeliveredBy] = useState("");
-  const [user_id, setUserId] = useState("");
 
   async function handleCreateLeftoversTurnover(e) {
     e.preventDefault();
@@ -33,7 +32,6 @@ const LeftoversTurnover = () => {
         number_of_items,
         quantity,
         delivered_by,
-        user_id,
       };
       const { data } = await api.post("/leftoversturnover", body);
       toast.success(data.message);
@@ -119,15 +117,6 @@ const LeftoversTurnover = () => {
                 placeholder="Enter Delivered By"
                 value={delivered_by}
                 onChange={(e) => setDeliveredBy(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>User ID</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter User ID"
-                value={user_id}
-                onChange={(e) => setUserId(e.target.value)}
               />
             </Form.Group>
             <Button variant="primary" type="submit">

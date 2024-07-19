@@ -15,7 +15,6 @@ const LeftoversProduce = () => {
   const [number_of_fried_chicken, setNumberOfFriedChicken] = useState("");
   const [number_of_lumpia_produce, setNumberOfLumpiaProduce] = useState("");
   const [dispatched_to, setDispatchedTo] = useState("");
-  const [user_id, setUserId] = useState("");
 
   async function handleCreateLeftoversProduce(e) {
     e.preventDefault();
@@ -24,7 +23,6 @@ const LeftoversProduce = () => {
         number_of_fried_chicken,
         number_of_lumpia_produce,
         dispatched_to,
-        user_id,
       };
       const { data } = await api.post("/leftoversproduce", body);
       toast.success(data.message);
@@ -78,14 +76,6 @@ const LeftoversProduce = () => {
             >
               <Form.Label>Dispatched To</Form.Label>
               <Form.Control type="text" placeholder="Enter Dispatched To" />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              value={user_id}
-              onChange={(e) => setUserId(e.target.value)}
-            >
-              <Form.Label>User</Form.Label>
-              <Form.Control type="text" placeholder="Enter User ID" />
             </Form.Group>
             <Button variant="primary" type="submit">
               Submit

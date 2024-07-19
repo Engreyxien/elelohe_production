@@ -23,7 +23,6 @@ const StocksTransfer = () => {
   const [description, setDescription] = useState("");
   const [unit_price, setUnitPrice] = useState("");
   const [amount, setAmount] = useState("");
-  const [user_id, setUserId] = useState("");
 
   async function handleCreateStocksTransfer(e) {
     e.preventDefault();
@@ -40,7 +39,6 @@ const StocksTransfer = () => {
         description,
         unit_price,
         amount,
-        user_id,
       };
       const { data } = await api.post("/stockstransfer", body);
       toast.success(data.message);
@@ -160,14 +158,6 @@ const StocksTransfer = () => {
             >
               <Form.Label>Amount</Form.Label>
               <Form.Control type="text" placeholder="Enter Amount" />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              value={user_id}
-              onChange={(e) => setUserId(e.target.value)}
-            >
-              <Form.Label>User</Form.Label>
-              <Form.Control type="text" placeholder="Enter User ID" />
             </Form.Group>
             <Button variant="primary" type="submit">
               Submit

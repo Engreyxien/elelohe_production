@@ -34,7 +34,6 @@ const PurchaseorderChickens = () => {
         particulars,
         unit_price,
         amount,
-        user_id,
       };
       const { data } = await api.post("/purchaseorderchicken", body);
       toast.success(data.message);
@@ -120,13 +119,6 @@ const PurchaseorderChickens = () => {
             >
               <Form.Label>Amount</Form.Label>
               <Form.Control type="text" placeholder="Enter Amount" />
-            </Form.Group>
-            <Form.Group
-              className="mb-3"
-              onChange={(e) => setUserId(e.target.value)}
-            >
-              <Form.Label>User</Form.Label>
-              <Form.Control type="text" placeholder="Enter User ID" />
             </Form.Group>
             <Button variant="primary" type="submit">
               Submit
