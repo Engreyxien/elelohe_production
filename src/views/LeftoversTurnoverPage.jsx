@@ -43,10 +43,10 @@ const LeftoversTurnoverPage = () => {
           <thead>
             <tr>
               <th>Branch</th>
-              <th>Date</th>
-              <th>Time</th>
+              <th>Date Received</th>
+              <th>Time Received</th>
               <th>Item Number</th>
-              <th>Number of Item</th>
+              <th>Number of Items</th>
               <th>Quantity</th>
               <th>Delivered By</th>
             </tr>
@@ -55,8 +55,8 @@ const LeftoversTurnoverPage = () => {
             {LeftoversTurnovers.map((leftoversturnovers) => (
               <tr key={leftoversturnovers.id}>
                 <td>{leftoversturnovers.branch}</td>
-                <td>{leftoversturnovers.date}</td>
-                <td>{leftoversturnovers.time}</td>
+                <td>{leftoversturnovers.date_received}</td>
+                <td>{leftoversturnovers.time_received}</td>
                 <td>{leftoversturnovers.item_number}</td>
                 <td>{leftoversturnovers.number_of_items}</td>
                 <td>{leftoversturnovers.quantity}</td>

@@ -14,8 +14,8 @@ const LeftoversTurnover = () => {
   const navigate = useNavigate();
 
   const [branch, setBranch] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
+  const [date_received, setDateReceived] = useState("");
+  const [time_received, setTimeReceived] = useState("");
   const [item_number, setItemNumber] = useState("");
   const [number_of_items, setNumberOfItems] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -26,8 +26,8 @@ const LeftoversTurnover = () => {
     try {
       const body = {
         branch,
-        date,
-        time,
+        date_received,
+        time_received,
         item_number,
         number_of_items,
         quantity,
@@ -69,7 +69,7 @@ const LeftoversTurnover = () => {
               <Form.Control
                 type="date"
                 placeholder="Enter Date"
-                onChange={(e) => setDate(e.target.value)}
+                onChange={(e) => setDateReceived(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="mb-3">
@@ -77,7 +77,7 @@ const LeftoversTurnover = () => {
               <Form.Control
                 type="time"
                 placeholder="Enter Time"
-                onChange={(e) => setTime(e.target.value)}
+                onChange={(e) => setTimeReceived(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="mb-3">
