@@ -77,6 +77,7 @@ const LeftoversTurnover = () => {
               <Form.Control
                 type="time"
                 placeholder="Enter Time"
+                value={time_received}
                 onChange={(e) => setTimeReceived(e.target.value)}
               />
             </Form.Group>

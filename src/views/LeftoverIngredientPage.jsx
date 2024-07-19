@@ -46,7 +46,6 @@ const LeftoverIngredientPage = () => {
               <th>Quantity</th>
               <th>Unit Price</th>
               <th>Amount</th>
-              <th>Created At</th>
             </tr>
           </thead>
           <tbody>
@@ -56,7 +55,6 @@ const LeftoverIngredientPage = () => {
                 <td>{leftoveringredients.quantity}</td>
                 <td>{leftoveringredients.unit_price}</td>
                 <td>{leftoveringredients.amount}</td>
-                <td>{leftoveringredients.created_at}</td>
               </tr>
             ))}
           </tbody>

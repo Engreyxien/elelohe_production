@@ -46,7 +46,7 @@ const LeftoversTurnoverPage = () => {
               <th>Date Received</th>
               <th>Time Received</th>
               <th>Item Number</th>
-              <th>Number of Items</th>
+              <th>Number of Item</th>
               <th>Quantity</th>
               <th>Delivered By</th>
             </tr>

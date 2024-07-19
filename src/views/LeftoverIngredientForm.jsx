@@ -16,7 +16,6 @@ const LeftoverIngredient = () => {
   const [quantity, setQuantity] = useState("");
   const [unit_price, setUnitPrice] = useState("");
   const [amount, setAmount] = useState("");
-  const [user_id, setUserId] = useState("");
 
   async function handleCreateLeftoverIngredient(e) {
     e.preventDefault();
