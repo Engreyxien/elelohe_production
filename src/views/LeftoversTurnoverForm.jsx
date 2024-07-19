@@ -61,7 +61,6 @@ const LeftoversTurnover = () => {
               <Form.Control
                 type="text"
                 placeholder="Enter Branch"
-                value={branch}
                 onChange={(e) => setBranch(e.target.value)}
               />
             </Form.Group>
@@ -70,7 +69,6 @@ const LeftoversTurnover = () => {
               <Form.Control
                 type="date"
                 placeholder="Enter Date"
-                value={date}
                 onChange={(e) => setDate(e.target.value)}
               />
             </Form.Group>
@@ -79,7 +77,6 @@ const LeftoversTurnover = () => {
               <Form.Control
                 type="time"
                 placeholder="Enter Time"
-                value={time}
                 onChange={(e) => setTime(e.target.value)}
               />
             </Form.Group>
@@ -88,7 +85,6 @@ const LeftoversTurnover = () => {
               <Form.Control
                 type="text"
                 placeholder="Enter Item Number"
-                value={item_number}
                 onChange={(e) => setItemNumber(e.target.value)}
               />
             </Form.Group>
@@ -97,7 +93,6 @@ const LeftoversTurnover = () => {
               <Form.Control
                 type="text"
                 placeholder="Enter Item"
-                value={number_of_items}
                 onChange={(e) => setNumberOfItems(e.target.value)}
               />
             </Form.Group>
@@ -106,7 +101,6 @@ const LeftoversTurnover = () => {
               <Form.Control
                 type="text"
                 placeholder="Enter Quantity"
-                value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
               />
             </Form.Group>
@@ -115,7 +109,6 @@ const LeftoversTurnover = () => {
               <Form.Control
                 type="text"
                 placeholder="Enter Delivered By"
-                value={delivered_by}
                 onChange={(e) => setDeliveredBy(e.target.value)}
               />
             </Form.Group>
